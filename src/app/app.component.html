@@ -1,3 +1,10 @@
 
 <app-password></app-password>
 
+<form [formGroup]="formGroup">
+  <app-input [formControlName]="'password'"></app-input>
+</form>
+
+{{ formGroup.value | json }}
+
+
