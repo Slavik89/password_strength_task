@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PasswordService } from '../services/password.service';
 
 @Component({
@@ -10,19 +10,20 @@ export class PasswordComponent {
 
   private _passwordService: PasswordService; 
   password: string="";   
+
+  // Variables which change styles for the lines under input in case it is empty
   styles= ['gray', 'gray', 'gray'];  
 
   constructor(passwordService: PasswordService) { 
     this._passwordService = passwordService;     
   } 
-  
-  // Variables which change styles for the lines under input
 
-  // A method which gets a password from the input and sends to the service
+  // A method which gets a password from the input
   getPassword (password: string): void {
     this.password = password;
   }
 
+  // A method which provides style changes for lines under input
   getStyles(): string[] {
     return this._passwordService.setStyles(this.password);
   }

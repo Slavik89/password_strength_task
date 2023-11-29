@@ -7,8 +7,6 @@ import { PasswordComponent } from './password/password.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordService } from './services/password.service';
-import { InputComponent } from './components/input/input.component';
-import { LineComponent } from './components/line/line.component';
 
 const routes: Routes = [
   { path:'password', component: PasswordComponent }
@@ -17,9 +15,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PasswordComponent,
-    InputComponent,
-    LineComponent
+    PasswordComponent
   ],
   imports: [
     BrowserModule,

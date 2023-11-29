@@ -5,9 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class PasswordService {  
 
+  // Variable for styles logic which will contain styles for every lines under input
   styles: string[]=[];
 
-  /* variables which contains regular 
+  /* variables which contain regular 
   expressions for strings, digits and symbols */
 
    // for easy case
@@ -22,14 +23,11 @@ export class PasswordService {
  
    // for strong case
    regexpStrong = /^(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!@#$%^&?() "].*).{8,}$/; 
-   
-  constructor() { }  
 
-  /*  A method which checks whether password is valid and 
+  
+   /*  A method which checks whether password is valid and 
   changes a styles of the lines under input  */
-
   setStyles(password: string): string[] {
-    console.log(password.length);
 
     if (password !== "" && password.length < 8) {
       this.styles = [];
